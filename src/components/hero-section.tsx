@@ -6,6 +6,16 @@ export default function HeroSection() {
   return (
     <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
       <div className="mx-auto flex max-w-[980px] flex-col items-center gap-2 text-center">
+        <div className="mb-6">
+          <div className="size-48 md:size-96 rounded-full overflow-hidden bg-primary p-1 md:p-3 mx-auto">
+            <img
+              src="/tanstack.png"
+              alt="TanStack Logo"
+              className="w-full h-full object-cover rounded-full"
+              style={{ objectPosition: '-90px center' }}
+            />
+          </div>
+        </div>
         <Badge variant="outline" className="mb-4">
           <Zap className="mr-1 h-3 w-3" />
           TanStack Form Integration
