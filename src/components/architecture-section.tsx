@@ -13,7 +13,7 @@ export default function ArchitectureSection() {
           practices.
         </p>
       </div>
-      <div className="mx-auto max-w-[800px] grid gap-6 md:grid-cols-2">
+      <div className="mx-auto max-w-[800px] grid gap-6 md:grid-cols-2 px-4">
         <Card>
           <CardHeader>
             <CardTitle>Form Components</CardTitle>

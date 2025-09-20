@@ -19,7 +19,7 @@ export default function FeaturesSection() {
           developer experience.
         </p>
       </div>
-      <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+      <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3 px-4">
         <Card>
           <CardHeader>
             <CheckCircle className="h-8 w-8 text-primary" />

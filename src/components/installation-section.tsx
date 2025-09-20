@@ -14,12 +14,18 @@ export default function InstallationSection() {
           Get up and running in minutes with our simple installation process.
         </p>
       </div>
-      <div className="mx-auto max-w-[800px]">
+      <div className="mx-auto max-w-[800px] px-4">
         <Tabs defaultValue="npm" className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="npm">npm</TabsTrigger>
-            <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-            <TabsTrigger value="yarn">yarn</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 h-auto">
+            <TabsTrigger value="npm" className="text-xs sm:text-sm">
+              npm
+            </TabsTrigger>
+            <TabsTrigger value="pnpm" className="text-xs sm:text-sm">
+              pnpm
+            </TabsTrigger>
+            <TabsTrigger value="yarn" className="text-xs sm:text-sm">
+              yarn
+            </TabsTrigger>
           </TabsList>
           <NpmTab />
           <PnpmTab />
@@ -37,11 +43,12 @@ function FixedSteps() {
         <h3 className="text-lg font-semibold mb-2">
           3. Copy the form.tsx component to your project components/ui folder
         </h3>
-        <div className="bg-muted p-4 rounded-lg font-mono text-sm">
+        <div className="bg-muted p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
           <a
             href="https://github.com/felipestanzani/shadcn-tanstack-form/blob/main/src/components/ui/form.tsx"
             target="_blank"
             rel="noopener noreferrer"
+            className="break-words"
           >
             Download it here
           </a>
@@ -51,11 +58,12 @@ function FixedSteps() {
         <h3 className="text-lg font-semibold mb-2">
           4. Copy the form-hook.tsx component to your project hooks folder
         </h3>
-        <div className="bg-muted p-4 rounded-lg font-mono text-sm">
+        <div className="bg-muted p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
           <a
             href="https://github.com/felipestanzani/shadcn-tanstack-form/blob/main/src/hooks/form-hook.tsx"
             target="_blank"
             rel="noopener noreferrer"
+            className="break-words"
           >
             Download it here
           </a>
@@ -71,16 +79,20 @@ function NpmTab() {
       <div className="space-y-4">
         <div>
           <h3 className="text-lg font-semibold mb-2">1. Install shadcn/ui</h3>
-          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-            npx shadcn@latest init
+          <div className="bg-muted p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
+            <pre className="whitespace-pre-wrap break-words">
+              npx shadcn@latest init
+            </pre>
           </div>
         </div>
         <div>
           <h3 className="text-lg font-semibold mb-2">
             2. Install TanStack Form
           </h3>
-          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-            npm add @tanstack/react-form
+          <div className="bg-muted p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
+            <pre className="whitespace-pre-wrap break-words">
+              npm add @tanstack/react-form
+            </pre>
           </div>
         </div>
         <FixedSteps />
@@ -89,8 +101,10 @@ function NpmTab() {
             5. Add the shadcn/ui components you want (button, input, label,
             checkbox, textarea...)
           </h3>
-          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-            npx shadcn@latest add button input label checkbox textarea
+          <div className="bg-muted p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
+            <pre className="whitespace-pre-wrap break-words">
+              npx shadcn@latest add button input label checkbox textarea
+            </pre>
           </div>
         </div>
       </div>
@@ -104,16 +118,20 @@ export function PnpmTab() {
       <div className="space-y-4">
         <div>
           <h3 className="text-lg font-semibold mb-2">1. Install shadcn/ui</h3>
-          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-            npx shadcn@latest init
+          <div className="bg-muted p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
+            <pre className="whitespace-pre-wrap break-words">
+              npx shadcn@latest init
+            </pre>
           </div>
         </div>
         <div>
           <h3 className="text-lg font-semibold mb-2">
             2. Install TanStack Form
           </h3>
-          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-            pnpm add @tanstack/react-form
+          <div className="bg-muted p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
+            <pre className="whitespace-pre-wrap break-words">
+              pnpm add @tanstack/react-form
+            </pre>
           </div>
         </div>
         <FixedSteps />
@@ -122,8 +140,10 @@ export function PnpmTab() {
             Add the shadcn/ui components you want (button, input, label,
             checkbox, textarea...)
           </h3>
-          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-            npx shadcn@latest add button input label checkbox textarea
+          <div className="bg-muted p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
+            <pre className="whitespace-pre-wrap break-words">
+              npx shadcn@latest add button input label checkbox textarea
+            </pre>
           </div>
         </div>
       </div>
@@ -137,16 +157,20 @@ export function YarnTab() {
       <div className="space-y-4">
         <div>
           <h3 className="text-lg font-semibold mb-2">1. Install shadcn/ui</h3>
-          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-            npx shadcn@latest init
+          <div className="bg-muted p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
+            <pre className="whitespace-pre-wrap break-words">
+              npx shadcn@latest init
+            </pre>
           </div>
         </div>
         <div>
           <h3 className="text-lg font-semibold mb-2">
             2. Install TanStack Form
           </h3>
-          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-            yarn add @tanstack/react-form
+          <div className="bg-muted p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
+            <pre className="whitespace-pre-wrap break-words">
+              yarn add @tanstack/react-form
+            </pre>
           </div>
         </div>
         <FixedSteps />
@@ -155,8 +179,10 @@ export function YarnTab() {
             5. Add the shadcn/ui components you want (button, input, label,
             checkbox, textarea...)
           </h3>
-          <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-            npx shadcn@latest add button input label checkbox textarea
+          <div className="bg-muted p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
+            <pre className="whitespace-pre-wrap break-words">
+              npx shadcn@latest add button input label checkbox textarea
+            </pre>
           </div>
         </div>
       </div>

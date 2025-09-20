@@ -17,7 +17,7 @@ export default function UsageSection() {
           Simple, intuitive API that combines the best of both libraries.
         </p>
       </div>
-      <div className="mx-auto max-w-[800px]">
+      <div className="mx-auto max-w-[800px] px-4">
         <Card>
           <CardHeader>
             <CardTitle>Basic Form Hook</CardTitle>
@@ -27,8 +27,8 @@ export default function UsageSection() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="bg-muted p-4 rounded-lg font-mono text-sm overflow-x-auto">
-              <pre>{`const form = useAppForm({
+            <div className="bg-muted p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
+              <pre className="whitespace-pre-wrap break-words">{`const form = useAppForm({
     defaultValues: {
       firstName: "",
       lastName: "",

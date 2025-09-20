@@ -18,29 +18,41 @@ export default function HeroSection() {
           Form, maintaining TanStack's core principles of developer experience
           and type safety.
         </p>
-        <div className="flex gap-4 mt-6">
-          <Button size="lg" asChild>
+        <div className="flex flex-col sm:flex-row gap-4 mt-6 w-full sm:w-auto">
+          <Button size="lg" asChild className="w-full sm:w-auto">
             <a href="#installation">
               <Download className="mr-2 h-4 w-4" />
               Get Started
             </a>
           </Button>
-          <Button variant="outline" size="lg" asChild>
-            <a href="https://shadcn.com/ui" target="_blank" rel="noreferrer">
-              <ExternalLink className="mr-2 h-4 w-4" />
-              shadcn/ui
-            </a>
-          </Button>
-          <Button variant="outline" size="lg" asChild>
-            <a
-              href="https://tanstack.com/form"
-              target="_blank"
-              rel="noreferrer"
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="w-full sm:w-auto"
             >
-              <ExternalLink className="mr-2 h-4 w-4" />
-              TanStack Form
-            </a>
-          </Button>
+              <a href="https://shadcn.com/ui" target="_blank" rel="noreferrer">
+                <ExternalLink className="mr-2 h-4 w-4" />
+                shadcn/ui
+              </a>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="w-full sm:w-auto"
+            >
+              <a
+                href="https://tanstack.com/form"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                TanStack Form
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
