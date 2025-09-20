@@ -137,7 +137,7 @@ export function PnpmTab() {
         <FixedSteps />
         <div>
           <h3 className="text-lg font-semibold mb-2">
-            Add the shadcn/ui components you want (button, input, label,
+            5. Add the shadcn/ui components you want (button, input, label,
             checkbox, textarea...)
           </h3>
           <div className="bg-muted p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto">
