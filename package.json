@@ -1,6 +1,37 @@
 {
   "name": "shadcn-tanstack-form-site",
   "version": "0.1.0",
+  "description": "A seamless integration of shadcn/ui Form components with TanStack Form, maintaining TanStack's core principles of developer experience and type safety.",
+  "keywords": [
+    "shadcn/ui",
+    "TanStack Form",
+    "React forms",
+    "TypeScript",
+    "form validation",
+    "React components",
+    "UI library",
+    "form library",
+    "type-safe forms"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/felipestanzani/shadcn-tanstack-form"
+  },
+  "homepage": "https://shadcn-tanstack-form.felipestanzani.com",
+  "bugs": {
+    "url": "https://github.com/felipestanzani/shadcn-tanstack-form/issues"
+  },
+  "author": {
+    "name": "Felipe Stanzani",
+    "url": "https://github.com/felipestanzani"
+  },
+  "contributors": [
+    {
+      "name": "Luca LeCarbonator",
+      "url": "https://github.com/LeCarbonator"
+    }
+  ],
   "private": true,
   "type": "module",
   "scripts": {

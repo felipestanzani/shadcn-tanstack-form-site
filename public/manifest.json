@@ -1,0 +1,30 @@
+{
+    "name": "shadcn/ui + TanStack Form",
+    "short_name": "shadcn-tanstack-form",
+    "description": "A seamless integration of shadcn/ui Form components with TanStack Form, maintaining TanStack's core principles of developer experience and type safety.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/placeholder-logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/placeholder-logo.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ],
+    "categories": [
+        "developer",
+        "productivity",
+        "utilities"
+    ],
+    "lang": "en",
+    "dir": "ltr"
+}

@@ -11,13 +11,13 @@ export default function TanStackFormDocs() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <div className="flex flex-col justify-center">
+      <main id="main" className="flex flex-col justify-center">
         <HeroSection />
         <FeaturesSection />
         <InstallationSection />
         <UsageSection />
         <ArchitectureSection />
-      </div>
+      </main>
       <Footer />
     </div>
   )
