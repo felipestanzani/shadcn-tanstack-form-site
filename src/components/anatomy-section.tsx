@@ -16,7 +16,8 @@ export default function UsageSection() {
           Anatomy
         </h2>
         <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl text-balance">
-          Simple, intuitive API that combines the best of both libraries.
+          A solid structure for building type-safe forms with built-in
+          validation, state management, and design consistency.
         </p>
       </div>
       <div className="mx-auto max-w-[800px] px-4">
@@ -24,8 +25,7 @@ export default function UsageSection() {
           <CardHeader>
             <CardTitle>Anatomy of the Form</CardTitle>
             <CardDescription>
-              Create a custom hook that integrates TanStack Form with shadcn/ui
-              components.
+              How to build a form using the shadcn/ui TanStack Form components.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -43,66 +43,75 @@ export default function UsageSection() {
                 wrapLongLines={true}
               >
                 {`<form.AppForm>
-    <Form className="space-y-4">
-      <form.AppField
-        name="firstName"
-        validators={{
-          onChange: ({ value }: { value: string }) =>
-            !value
-              ? "A first name is required"
-              : value.length < 2
-                ? "First name must be at least 2 characters"
-                : undefined,
-        }}
-      >
-        {(field) => (
-          <FormItem>
-            <FormLabel>First Name</FormLabel>
-            <FormControl>
-              <Input
-                placeholder="Enter your first name"
-                value={field.state.value}
-                onBlur={field.handleBlur}
-                onChange={(e) => field.handleChange(e.target.value)}
-              />
-            </FormControl>
-            <FormDescription>
-              This is your public display first name.
-            </FormDescription>
-            <FormMessage />
-          </FormItem>
-        )}
-      </form.AppField>
+  <Form className="...">
+    <form.AppField name="..."> {/* You can set field validators here */}
+      {(field) => (
+        <FormItem>
+          <FormLabel>...</FormLabel>
+          <FormControl>
+            { /* Your form field */}
+          </FormControl>
+          <FormDescription>
+            Optional description
+          </FormDescription>
+          <FormMessage /> {/* Validation error message */}
+        </FormItem>
+      )}
+    </form.AppField>
 
-      <form.AppField
-        name="lastName"
-        validators={{
-          onChange: ({ value }: { value: string }) =>
-            !value
-              ? "A last name is required"
-              : value.length < 2
-                ? "Last name must be at least 2 characters"
-                : undefined,
-        }}
-      >
-        {(field) => (
-          <FormItem>
-            <FormLabel>Last Name</FormLabel>
-            <FormControl>
-              <Input
-                placeholder="Enter your last name"
-                value={field.state.value}
-                onBlur={field.handleBlur}
-                onChange={(e) => field.handleChange(e.target.value)}
-              />
-            </FormControl>
-            <FormDescription>
-              This is your public display last name.
-            </FormDescription>
-            <FormMessage />
-          </FormItem>
-        )}
-      </form.AppField>
+    <form.Subscribe
+     selector={(state) => [state.canSubmit, state.isSubmitting]}
+    > {/* This element allows you to listen to the form state */}
+      {([canSubmit, isSubmitting]) => (
+        {/* Submit button */}
+      )}
+    </form.Subscribe>
+  </Form>
+</form.AppForm>`}
+              </SyntaxHighlighter>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+      <div className="mx-auto max-w-[800px] px-4">
+        <Card>
+          <CardHeader>
+            <CardTitle>Sample Form</CardTitle>
+            <CardDescription>Sample form with Zod validation.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="rounded-lg overflow-hidden">
+              <SyntaxHighlighter
+                language="tsx"
+                style={vscDarkPlus}
+                customStyle={{
+                  margin: 0,
+                  borderRadius: '0.5rem',
+                  fontSize: '0.875rem'
+                }}
+                showLineNumbers={true}
+                wrapLines={true}
+                wrapLongLines={true}
+              >
+                {`const userSchema = z.object({
+  email: z.string().email("Invalid email address"),
+})
+
+const form = useAppForm({
+  defaultValues: {
+    email: "",
+  },
+  validators: {
+    onChange: userSchema,
+  },
+  onSubmit: async ({ value }) => {
+    alert(\`Hello \${value.email}!\`)
+  },
+})
+
+return (
+  <form.AppForm>
+    <Form className="space-y-4">
 
       <form.AppField name="email">
         {(field) => (
