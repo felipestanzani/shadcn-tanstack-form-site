@@ -3,6 +3,21 @@ import { ThemeToggle } from './theme-toggle'
 import { Button } from './ui/button'
 
 export default function Header() {
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    e.preventDefault()
+    const element = document.getElementById(targetId)
+    if (element) {
+      const headerHeight = 56
+      const elementPosition = element.offsetTop - headerHeight
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
   return (
     <header className="flex justify-center sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center px-4">
@@ -18,24 +33,28 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
             <a
               href="#features"
+              onClick={(e) => handleSmoothScroll(e, 'features')}
               className="transition-colors hover:text-foreground/80 text-foreground/60"
             >
               Features
             </a>
             <a
               href="#installation"
+              onClick={(e) => handleSmoothScroll(e, 'installation')}
               className="transition-colors hover:text-foreground/80 text-foreground/60"
             >
               Installation
             </a>
             <a
               href="#usage"
+              onClick={(e) => handleSmoothScroll(e, 'usage')}
               className="transition-colors hover:text-foreground/80 text-foreground/60"
             >
               Usage
             </a>
             <a
               href="#architecture"
+              onClick={(e) => handleSmoothScroll(e, 'architecture')}
               className="transition-colors hover:text-foreground/80 text-foreground/60"
             >
               Architecture
