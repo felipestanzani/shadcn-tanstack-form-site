@@ -39,6 +39,13 @@ export default function Header() {
               Features
             </a>
             <a
+              href="#anatomy"
+              onClick={(e) => handleSmoothScroll(e, 'anatomy')}
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
+              Anatomy
+            </a>
+            <a
               href="#installation"
               onClick={(e) => handleSmoothScroll(e, 'installation')}
               className="transition-colors hover:text-foreground/80 text-foreground/60"

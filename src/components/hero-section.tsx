@@ -12,7 +12,6 @@ export default function HeroSection() {
               src="/tanstack.png"
               alt="TanStack Logo"
               className="w-full h-full object-cover rounded-full"
-              style={{ objectPosition: '-90px center' }}
             />
           </div>
         </div>

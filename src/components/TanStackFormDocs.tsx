@@ -5,6 +5,7 @@ import HeroSection from '@/components/hero-section'
 import FeaturesSection from '@/components/features-section'
 import UsageSection from '@/components/usage-section'
 import ArchitectureSection from '@/components/architecture-section'
+import AnatomySection from './anatomy-section'
 
 export default function TanStackFormDocs() {
   return (
@@ -14,6 +15,7 @@ export default function TanStackFormDocs() {
       <main id="main" className="flex flex-col justify-center">
         <HeroSection />
         <FeaturesSection />
+        <AnatomySection />
         <InstallationSection />
         <UsageSection />
         <ArchitectureSection />

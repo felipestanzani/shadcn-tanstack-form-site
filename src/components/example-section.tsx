@@ -10,10 +10,10 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 export default function UsageSection() {
   return (
-    <section id="usage" className="space-y-6 py-8 md:py-12 lg:py-24">
+    <section id="anatomy" className="space-y-6 py-8 md:py-12 lg:py-24">
       <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center">
         <h2 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl">
-          Usage
+          Anatomy
         </h2>
         <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl text-balance">
           Simple, intuitive API that combines the best of both libraries.
@@ -22,7 +22,7 @@ export default function UsageSection() {
       <div className="mx-auto max-w-[800px] px-4">
         <Card>
           <CardHeader>
-            <CardTitle>Basic Form Hook</CardTitle>
+            <CardTitle>Anatomy of the Form</CardTitle>
             <CardDescription>
               Create a custom hook that integrates TanStack Form with shadcn/ui
               components.
@@ -42,20 +42,7 @@ export default function UsageSection() {
                 wrapLines={true}
                 wrapLongLines={true}
               >
-                {`const form = useAppForm({
-  defaultValues: {
-    firstName: "",
-    lastName: "",
-    email: "",
-  },
-  onSubmit: async ({ value }) => {
-    console.log("Form submitted:", value)
-    alert(\`Hello \${value.firstName} \${value.lastName}!\`)
-  },
-})
-
-return (
-  <form.AppForm>
+                {`<form.AppForm>
     <Form className="space-y-4">
       <form.AppField
         name="firstName"
