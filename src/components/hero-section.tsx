@@ -1,6 +1,6 @@
 import { Download, ExternalLink, Zap } from 'lucide-react'
-import { Badge } from './ui/badge'
-import { Button } from './ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 
 export default function HeroSection() {
   return (
@@ -24,9 +24,9 @@ export default function HeroSection() {
           shadcn/ui + TanStack Form
         </h1>
         <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl text-balance">
-          A seamless integration of shadcn/ui Form components with TanStack
-          Form, maintaining TanStack's core principles of developer experience
-          and type safety.
+          A shadcn/ui component that seamless integrates with TanStack Form,
+          maintaining its core principles of developer experience and type
+          safety.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 mt-6 w-full sm:w-auto">
           <Button size="lg" asChild className="w-full sm:w-auto">

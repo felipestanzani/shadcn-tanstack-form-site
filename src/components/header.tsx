@@ -8,7 +8,7 @@ export default function Header() {
       <div className="container flex h-14 items-center px-4">
         <div className="mr-4 flex items-center">
           <a className="mr-6 flex items-center space-x-2" href="/">
-            <div className="flex items-center justify-center bg-primary-foreground">
+            <div className="flex items-center justify-center">
               <TreePalm className="h-6 w-6 text-primary" />
             </div>
             <span className="hidden font-bold sm:inline-block">
