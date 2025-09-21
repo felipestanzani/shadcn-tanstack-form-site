@@ -4,7 +4,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle
-} from './ui/card'
+} from '@/components/ui/card'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 

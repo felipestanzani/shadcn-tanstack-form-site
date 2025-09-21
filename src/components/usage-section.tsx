@@ -4,7 +4,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle
-} from './ui/card'
+} from '@/components/ui/card'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
@@ -22,10 +22,10 @@ export default function UsageSection() {
       <div className="mx-auto max-w-[800px] px-4">
         <Card>
           <CardHeader>
-            <CardTitle>Basic Form Hook</CardTitle>
+            <CardTitle>Create a form schema</CardTitle>
             <CardDescription>
-              Create a custom hook that integrates TanStack Form with shadcn/ui
-              components.
+              You can optionally create a form schema to validate the form data,
+              create a custom validator, or set validators for each field.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -42,82 +42,122 @@ export default function UsageSection() {
                 wrapLines={true}
                 wrapLongLines={true}
               >
-                {`const form = useAppForm({
+                {`import { z } from "zod"
+
+const userSchema = z.object({
+  email: z.string().email("Invalid email address"),
+})`}
+              </SyntaxHighlighter>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="mx-auto max-w-[800px] px-4">
+        <Card>
+          <CardHeader>
+            <CardTitle>Define the form properties</CardTitle>
+            <CardDescription>
+              You can define the form properties such as default values,
+              validators, and onSubmit handler. For more details, check the
+              TanStack Form documentation.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="rounded-lg overflow-hidden">
+              <SyntaxHighlighter
+                language="tsx"
+                style={vscDarkPlus}
+                customStyle={{
+                  margin: 0,
+                  borderRadius: '0.5rem',
+                  fontSize: '0.875rem'
+                }}
+                showLineNumbers={true}
+                wrapLines={true}
+                wrapLongLines={true}
+              >
+                {`import { z } from "zod"
+import { useAppForm } from "@/hooks/form-hook"
+
+const userSchema = z.object({
+  email: z.string().email("Invalid email address"),
+})
+
+const form = useAppForm({
   defaultValues: {
-    firstName: "",
-    lastName: "",
+    email: "",
+  },
+  validators: {
+    onChange: userSchema,
+  },
+  onSubmit: async ({ value }) => {
+    alert(\`Hello \${value.email}!\`)
+  },
+})`}
+              </SyntaxHighlighter>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="mx-auto max-w-[800px] px-4">
+        <Card>
+          <CardHeader>
+            <CardTitle>Define the form properties</CardTitle>
+            <CardDescription>
+              You can define the form properties such as default values,
+              validators, and onSubmit handler. For more details, check the
+              TanStack Form documentation.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="rounded-lg overflow-hidden">
+              <SyntaxHighlighter
+                language="tsx"
+                style={vscDarkPlus}
+                customStyle={{
+                  margin: 0,
+                  borderRadius: '0.5rem',
+                  fontSize: '0.875rem'
+                }}
+                showLineNumbers={true}
+                wrapLines={true}
+                wrapLongLines={true}
+              >
+                {`import { z } from "zod"
+import { useAppForm } from "@/hooks/form-hook"
+import {
+  Form,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormDescription,
+  FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+
+const userSchema = z.object({
+  email: z.string().email("Invalid email address"),
+})
+
+const form = useAppForm({
+  defaultValues: {
+    validators: {
+      onChange: userSchema,
+    },
     email: "",
   },
   onSubmit: async ({ value }) => {
-    console.log("Form submitted:", value)
-    alert(\`Hello \${value.firstName} \${value.lastName}!\`)
+    alert(\`Hello \${value.email}!\`)
   },
 })
 
 return (
   <form.AppForm>
     <Form className="space-y-4">
-      <form.AppField
-        name="firstName"
-        validators={{
-          onChange: ({ value }: { value: string }) =>
-            !value
-              ? "A first name is required"
-              : value.length < 2
-                ? "First name must be at least 2 characters"
-                : undefined,
-        }}
-      >
-        {(field) => (
-          <FormItem>
-            <FormLabel>First Name</FormLabel>
-            <FormControl>
-              <Input
-                placeholder="Enter your first name"
-                value={field.state.value}
-                onBlur={field.handleBlur}
-                onChange={(e) => field.handleChange(e.target.value)}
-              />
-            </FormControl>
-            <FormDescription>
-              This is your public display first name.
-            </FormDescription>
-            <FormMessage />
-          </FormItem>
-        )}
-      </form.AppField>
-
-      <form.AppField
-        name="lastName"
-        validators={{
-          onChange: ({ value }: { value: string }) =>
-            !value
-              ? "A last name is required"
-              : value.length < 2
-                ? "Last name must be at least 2 characters"
-                : undefined,
-        }}
-      >
-        {(field) => (
-          <FormItem>
-            <FormLabel>Last Name</FormLabel>
-            <FormControl>
-              <Input
-                placeholder="Enter your last name"
-                value={field.state.value}
-                onBlur={field.handleBlur}
-                onChange={(e) => field.handleChange(e.target.value)}
-              />
-            </FormControl>
-            <FormDescription>
-              This is your public display last name.
-            </FormDescription>
-            <FormMessage />
-          </FormItem>
-        )}
-      </form.AppField>
-
-      <form.AppField name="email">
+        <form.AppField name="email">
         {(field) => (
           <FormItem>
             <FormLabel>Email</FormLabel>
@@ -127,7 +167,6 @@ return (
                 placeholder="Enter your email"
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
-                onBlur={field.handleBlur}
               />
             </FormControl>
             <FormDescription>
@@ -138,9 +177,8 @@ return (
         )}
       </form.AppField>
 
-      <form.Subscribe
-        selector={(state) => [state.canSubmit, state.isSubmitting]}
-      >
+      {/* We can listen to the form state using the form.Subscribe component */}
+      <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
         {([canSubmit, isSubmitting]) => (
           <Button type="submit" disabled={!canSubmit}>
             {isSubmitting ? "Submitting..." : "Submit"}

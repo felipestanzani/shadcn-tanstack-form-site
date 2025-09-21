@@ -5,7 +5,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle
-} from './ui/card'
+} from '@/components/ui/card'
 
 export default function FeaturesSection() {
   return (
@@ -42,8 +42,8 @@ export default function FeaturesSection() {
           </CardHeader>
           <CardContent>
             <CardDescription>
-              Leverages TanStack Form's powerful state management and reactive
-              updates.
+              Leverages TanStack Form's powerful state management, validation,
+              and reactive updates.
             </CardDescription>
           </CardContent>
         </Card>
