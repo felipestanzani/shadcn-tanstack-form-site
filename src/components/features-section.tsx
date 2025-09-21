@@ -5,11 +5,14 @@ import {
   CardDescription,
   CardHeader,
   CardTitle
-} from './ui/card'
+} from '@/components/ui/card'
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="space-y-6 py-8 md:py-12 lg:py-24">
+    <section
+      id="features"
+      className="space-y-6 py-8 md:py-12 lg:py-24 bg-muted/50"
+    >
       <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center">
         <h2 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl">
           Features
@@ -39,8 +42,8 @@ export default function FeaturesSection() {
           </CardHeader>
           <CardContent>
             <CardDescription>
-              Leverages TanStack Form's powerful state management and reactive
-              updates.
+              Leverages TanStack Form's powerful state management, validation,
+              and reactive updates.
             </CardDescription>
           </CardContent>
         </Card>

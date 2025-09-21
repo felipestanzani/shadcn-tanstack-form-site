@@ -10,22 +10,22 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 export default function UsageSection() {
   return (
-    <section id="usage" className="space-y-6 py-8 md:py-12 lg:py-24">
+    <section id="anatomy" className="space-y-6 py-8 md:py-12 lg:py-24">
       <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center">
         <h2 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl">
-          Usage
+          Anatomy
         </h2>
         <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl text-balance">
-          Simple, intuitive API that combines the best of both libraries.
+          A solid structure for building type-safe forms with built-in
+          validation, state management, and design consistency.
         </p>
       </div>
       <div className="mx-auto max-w-[800px] px-4">
         <Card>
           <CardHeader>
-            <CardTitle>Create a form schema</CardTitle>
+            <CardTitle>Anatomy of the Form</CardTitle>
             <CardDescription>
-              You can optionally create a form schema to validate the form data,
-              create a custom validator, or set validators for each field.
+              How to build a form using the shadcn/ui TanStack Form components.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -42,26 +42,42 @@ export default function UsageSection() {
                 wrapLines={true}
                 wrapLongLines={true}
               >
-                {`import { z } from "zod"
+                {`<form.AppForm>
+  <Form className="...">
+    <form.AppField name="..."> {/* You can set field validators here */}
+      {(field) => (
+        <FormItem>
+          <FormLabel>...</FormLabel>
+          <FormControl>
+            { /* Your form field */}
+          </FormControl>
+          <FormDescription>
+            Optional description
+          </FormDescription>
+          <FormMessage /> {/* Validation error message */}
+        </FormItem>
+      )}
+    </form.AppField>
 
-const userSchema = z.object({
-  email: z.string().email("Invalid email address"),
-})`}
+    <form.Subscribe
+     selector={(state) => [state.canSubmit, state.isSubmitting]}
+    > {/* This element allows you to listen to the form state */}
+      {([canSubmit, isSubmitting]) => (
+        {/* Submit button */}
+      )}
+    </form.Subscribe>
+  </Form>
+</form.AppForm>`}
               </SyntaxHighlighter>
             </div>
           </CardContent>
         </Card>
       </div>
-
       <div className="mx-auto max-w-[800px] px-4">
         <Card>
           <CardHeader>
-            <CardTitle>Define the form properties</CardTitle>
-            <CardDescription>
-              You can define the form properties such as default values,
-              validators, and onSubmit handler. For more details, check the
-              TanStack Form documentation.
-            </CardDescription>
+            <CardTitle>Sample Form</CardTitle>
+            <CardDescription>Sample form with Zod validation.</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="rounded-lg overflow-hidden">
@@ -77,10 +93,7 @@ const userSchema = z.object({
                 wrapLines={true}
                 wrapLongLines={true}
               >
-                {`import { z } from "zod"
-import { useAppForm } from "@/hooks/form-hook"
-
-const userSchema = z.object({
+                {`const userSchema = z.object({
   email: z.string().email("Invalid email address"),
 })
 
@@ -94,70 +107,13 @@ const form = useAppForm({
   onSubmit: async ({ value }) => {
     alert(\`Hello \${value.email}!\`)
   },
-})`}
-              </SyntaxHighlighter>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="mx-auto max-w-[800px] px-4">
-        <Card>
-          <CardHeader>
-            <CardTitle>Define the form properties</CardTitle>
-            <CardDescription>
-              You can define the form properties such as default values,
-              validators, and onSubmit handler. For more details, check the
-              TanStack Form documentation.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="rounded-lg overflow-hidden">
-              <SyntaxHighlighter
-                language="tsx"
-                style={vscDarkPlus}
-                customStyle={{
-                  margin: 0,
-                  borderRadius: '0.5rem',
-                  fontSize: '0.875rem'
-                }}
-                showLineNumbers={true}
-                wrapLines={true}
-                wrapLongLines={true}
-              >
-                {`import { z } from "zod"
-import { useAppForm } from "@/hooks/form-hook"
-import {
-  Form,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormDescription,
-  FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-
-const userSchema = z.object({
-  email: z.string().email("Invalid email address"),
-})
-
-const form = useAppForm({
-  defaultValues: {
-    validators: {
-      onChange: userSchema,
-    },
-    email: "",
-  },
-  onSubmit: async ({ value }) => {
-    alert(\`Hello \${value.email}!\`)
-  },
 })
 
 return (
   <form.AppForm>
     <Form className="space-y-4">
-        <form.AppField name="email">
+
+      <form.AppField name="email">
         {(field) => (
           <FormItem>
             <FormLabel>Email</FormLabel>
@@ -167,6 +123,7 @@ return (
                 placeholder="Enter your email"
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
+                onBlur={field.handleBlur}
               />
             </FormControl>
             <FormDescription>
@@ -177,8 +134,9 @@ return (
         )}
       </form.AppField>
 
-      {/* We can listen to the form state using the form.Subscribe component */}
-      <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
+      <form.Subscribe
+        selector={(state) => [state.canSubmit, state.isSubmitting]}
+      >
         {([canSubmit, isSubmitting]) => (
           <Button type="submit" disabled={!canSubmit}>
             {isSubmitting ? "Submitting..." : "Submit"}
