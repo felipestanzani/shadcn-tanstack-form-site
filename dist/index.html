@@ -2,216 +2,366 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/placeholder-logo.svg" />
-    <link rel="apple-touch-icon" href="/placeholder-logo.png" />
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/placeholder-logo.svg" />
+  <link rel="apple-touch-icon" href="/placeholder-logo.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary Meta Tags -->
-    <title>shadcn/ui + TanStack Form - Type-Safe React Forms</title>
-    <meta name="title" content="shadcn/ui + TanStack Form - Type-Safe React Forms" />
-    <meta name="description"
-        content="A seamless integration of shadcn/ui Form components with TanStack Form, maintaining TanStack's core principles of developer experience and type safety." />
-    <meta name="keywords"
-        content="shadcn/ui, TanStack Form, React forms, TypeScript, form validation, React components, UI library, form library, type-safe forms" />
-    <meta name="author" content="Felipe Stanzani" />
-    <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
-    <meta name="revisit-after" content="7 days" />
+  <!-- Primary Meta Tags -->
+  <title>shadcn/ui + TanStack Form - Type-Safe React Forms</title>
+  <meta name="title" content="shadcn/ui + TanStack Form - Type-Safe React Forms" />
+  <meta name="description"
+    content="A powerful shadcn/ui component for building type-safe React forms with TanStack Form. Features beautiful UI components, built-in validation, accessible design, and seamless integration with Zod, Valibot, and ArkType schemas." />
+  <meta name="keywords"
+    content="shadcn/ui, TanStack Form, React forms, TypeScript, form validation, React components, UI library, form library, type-safe forms, Zod validation, accessible forms, form state management, reactive forms, frontend development, React hooks, form schemas, Valibot, ArkType" />
+  <meta name="author" content="Felipe Stanzani, Luca LeCarbonator" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://shadcn-tanstack-form.felipestanzani.com/" />
-    <meta property="og:title" content="shadcn/ui + TanStack Form - Type-Safe React Forms" />
-    <meta property="og:description"
-        content="A seamless integration of shadcn/ui Form components with TanStack Form, maintaining TanStack's core principles of developer experience and type safety." />
-    <meta property="og:image" content="https://shadcn-tanstack-form.felipestanzani.com/tanstack.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="shadcn/ui + TanStack Form" />
-    <meta property="og:locale" content="en_US" />
+  <!-- Technical Meta Tags -->
+  <meta name="application-name" content="shadcn/ui + TanStack Form" />
+  <meta name="category" content="developer tools, React library, form validation, UI components" />
+  <meta name="subject"
+    content="React form library integrating shadcn/ui with TanStack Form for type-safe, accessible forms" />
+  <meta name="coverage" content="Worldwide" />
+  <meta name="distribution" content="Global" />
+  <meta name="rating" content="General" />
+  <meta name="target" content="React developers, TypeScript developers, frontend developers" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://shadcn-tanstack-form.felipestanzani.com/" />
-    <meta property="twitter:title" content="shadcn/ui + TanStack Form - Type-Safe React Forms" />
-    <meta property="twitter:description"
-        content="A seamless integration of shadcn/ui Form components with TanStack Form, maintaining TanStack's core principles of developer experience and type safety." />
-    <meta property="twitter:image" content="https://shadcn-tanstack-form.felipestanzani.com/tanstack.png" />
-    <meta property="twitter:creator" content="@fstanzani" />
-    <meta property="twitter:site" content="@fstanzani" />
+  <!-- Feature-based Meta Tags -->
+  <meta name="features"
+    content="type-safe forms, schema validation, accessible components, reactive state management, TypeScript support" />
+  <meta name="dependencies" content="React 18+, TypeScript 4.5+, @tanstack/react-form, shadcn/ui" />
+  <meta name="supported-schemas" content="Zod, Valibot, ArkType, custom validators" />
 
-    <!-- Additional Meta Tags -->
-    <meta name="theme-color" content="#000000" />
-    <meta name="msapplication-TileColor" content="#000000" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="shadcn/ui + TanStack Form" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shadcn-tanstack-form.felipestanzani.com/" />
+  <meta property="og:title" content="shadcn/ui + TanStack Form - Type-Safe React Forms" />
+  <meta property="og:description"
+    content="Build beautiful, type-safe React forms with shadcn/ui + TanStack Form. Get powerful state management, built-in validation, accessibility features, and seamless schema integration out of the box." />
+  <meta property="og:image" content="https://shadcn-tanstack-form.felipestanzani.com/tanstack.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="shadcn/ui + TanStack Form" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <meta property="og:locale:alternate" content="en_CA" />
+  <meta property="og:locale:alternate" content="en_AU" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://shadcn-tanstack-form.felipestanzani.com/" />
+  <!-- Additional Open Graph Tags -->
+  <meta property="og:updated_time" content="2024-01-01T00:00:00Z" />
+  <meta property="og:see_also" content="https://shadcn.com/ui" />
+  <meta property="og:see_also" content="https://tanstack.com/form" />
+  <meta property="og:see_also" content="https://github.com/felipestanzani/shadcn-tanstack-form" />
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
+  <!-- Article specific Open Graph -->
+  <meta property="article:author" content="Felipe Stanzani" />
+  <meta property="article:author" content="Luca LeCarbonator" />
+  <meta property="article:section" content="Technology" />
+  <meta property="article:tag" content="React" />
+  <meta property="article:tag" content="TypeScript" />
+  <meta property="article:tag" content="Forms" />
+  <meta property="article:tag" content="UI Components" />
+  <meta property="article:tag" content="Developer Tools" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://shadcn-tanstack-form.felipestanzani.com/" />
+  <meta property="twitter:title" content="shadcn/ui + TanStack Form - Type-Safe React Forms" />
+  <meta property="twitter:description"
+    content="Build beautiful, type-safe React forms with shadcn/ui + TanStack Form. Get powerful state management, built-in validation, accessibility features, and seamless schema integration out of the box." />
+  <meta property="twitter:image" content="https://shadcn-tanstack-form.felipestanzani.com/tanstack.png" />
+  <meta property="twitter:creator" content="@fstanzani" />
+  <meta property="twitter:site" content="@fstanzani" />
+  <meta property="twitter:label1" content="Built with" />
+  <meta property="twitter:data1" content="React + TypeScript" />
+  <meta property="twitter:label2" content="License" />
+  <meta property="twitter:data2" content="Open Source" />
+
+  <!-- Additional Meta Tags -->
+  <meta name="theme-color" content="#000000" />
+  <meta name="msapplication-TileColor" content="#000000" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="shadcn/ui + TanStack Form" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://shadcn-tanstack-form.felipestanzani.com/" />
+
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "shadcn/ui + TanStack Form",
-      "description": "A seamless integration of shadcn/ui Form components with TanStack Form, maintaining TanStack's core principles of developer experience and type safety.",
-      "url": "https://shadcn-tanstack-form.felipestanzani.com/",
-      "author": {
-        "@type": "Person",
-        "name": "Felipe Stanzani",
-        "url": "https://github.com/felipestanzani"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "shadcn/ui + TanStack Form",
-        "url": "https://shadcn-tanstack-form.felipestanzani.com/"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://shadcn-tanstack-form.felipestanzani.com/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
-      "mainEntity": {
-        "@type": "SoftwareApplication",
-        "name": "shadcn/ui + TanStack Form Integration",
-        "description": "Type-safe React forms with shadcn/ui components and TanStack Form",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "Web Browser",
-        "programmingLanguage": "TypeScript, React",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      }
-    }
-    </script>
-
-    <!-- Additional Structured Data for Software -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "shadcn/ui + TanStack Form",
-      "description": "A seamless integration of shadcn/ui Form components with TanStack Form, maintaining TanStack's core principles of developer experience and type safety.",
-      "url": "https://shadcn-tanstack-form.felipestanzani.com/",
-      "author": {
-        "@type": "Person",
-        "name": "Felipe Stanzani",
-        "url": "https://github.com/felipestanzani"
-      },
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Web Browser",
-      "programmingLanguage": ["TypeScript", "React", "JavaScript"],
-      "softwareVersion": "1.0.0",
-      "datePublished": "2024-01-01",
-      "dateModified": "2024-01-01",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "featureList": [
-        "Type-safe forms with TypeScript",
-        "TanStack Form integration",
-        "shadcn/ui styling",
-        "Accessible components",
-        "Developer experience focused",
-        "Reactive form state management"
-      ]
-    }
-    </script>
-
-    <!-- Breadcrumb Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
+      "@graph": [
         {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://shadcn-tanstack-form.felipestanzani.com/"
+          "@type": "SoftwareApplication",
+          "@id": "https://shadcn-tanstack-form.felipestanzani.com/#software",
+          "name": "shadcn/ui + TanStack Form",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Cross-platform",
+          "description": "A shadcn/ui component that seamlessly integrates with TanStack Form, maintaining its core principles of developer experience and type safety.",
+          "url": "https://shadcn-tanstack-form.felipestanzani.com/",
+          "downloadUrl": "https://github.com/felipestanzani/shadcn-tanstack-form",
+          "installUrl": "https://github.com/felipestanzani/shadcn-tanstack-form",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Felipe Stanzani",
+              "url": "https://felipestanzani.com"
+            },
+            {
+              "@type": "Person",
+              "name": "Luca LeCarbonator",
+              "url": "https://github.com/LeCarbonator"
+            }
+          ],
+          "programmingLanguage": [
+            "TypeScript",
+            "JavaScript",
+            "React"
+          ],
+          "keywords": [
+            "React",
+            "TypeScript",
+            "shadcn/ui",
+            "TanStack Form",
+            "form validation",
+            "UI components",
+            "form library",
+            "type-safe forms",
+            "React forms",
+            "frontend development"
+          ],
+          "license": "https://github.com/felipestanzani/shadcn-tanstack-form/blob/main/LICENSE",
+          "codeRepository": "https://github.com/felipestanzani/shadcn-tanstack-form",
+          "softwareVersion": "1.0.0",
+          "releaseNotes": "Initial release with full shadcn/ui and TanStack Form integration",
+          "softwareRequirements": [
+            "React 18+",
+            "TypeScript 4.5+",
+            "@tanstack/react-form",
+            "shadcn/ui components"
+          ],
+          "featureList": [
+            "Type-safe forms with full TypeScript support",
+            "TanStack Form integration with powerful state management",
+            "shadcn/ui styling with beautiful, accessible components",
+            "Schema validation support (Zod, Valibot, ArkType)",
+            "Automatic error handling",
+            "Reactive state management",
+            "Built-in accessibility features"
+          ],
+          "screenshot": "https://shadcn-tanstack-form.felipestanzani.com/tanstack.png"
         },
         {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Features",
-          "item": "https://shadcn-tanstack-form.felipestanzani.com/#features"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Installation",
-          "item": "https://shadcn-tanstack-form.felipestanzani.com/#installation"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Usage",
-          "item": "https://shadcn-tanstack-form.felipestanzani.com/#usage"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "name": "Architecture",
-          "item": "https://shadcn-tanstack-form.felipestanzani.com/#architecture"
-        }
-      ]
-    }
-    </script>
-
-    <!-- FAQ Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is shadcn/ui + TanStack Form?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "shadcn/ui + TanStack Form is a seamless integration of shadcn/ui Form components with TanStack Form, maintaining TanStack's core principles of developer experience and type safety."
+          "@type": "WebSite",
+          "@id": "https://shadcn-tanstack-form.felipestanzani.com/#website",
+          "url": "https://shadcn-tanstack-form.felipestanzani.com/",
+          "name": "shadcn/ui + TanStack Form",
+          "description": "Documentation and examples for the shadcn/ui + TanStack Form integration",
+          "inLanguage": "en-US",
+          "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://shadcn-tanstack-form.felipestanzani.com/#website"
+          },
+          "about": {
+            "@id": "https://shadcn-tanstack-form.felipestanzani.com/#software"
+          },
+          "mainEntity": {
+            "@id": "https://shadcn-tanstack-form.felipestanzani.com/#software"
           }
         },
         {
-          "@type": "Question",
-          "name": "What are the key features?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Key features include type-safe forms with TypeScript, TanStack Form integration, shadcn/ui styling, accessible components, developer experience focus, and reactive form state management."
-          }
+          "@type": "TechArticle",
+          "@id": "https://shadcn-tanstack-form.felipestanzani.com/#documentation",
+          "headline": "shadcn/ui + TanStack Form Integration Guide",
+          "description": "Complete documentation for integrating shadcn/ui components with TanStack Form for type-safe React forms",
+          "url": "https://shadcn-tanstack-form.felipestanzani.com/",
+          "datePublished": "2024-01-01",
+          "dateModified": "2024-01-01",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Felipe Stanzani",
+              "url": "https://felipestanzani.com"
+            },
+            {
+              "@type": "Person",
+              "name": "Luca LeCarbonator",
+              "url": "https://github.com/LeCarbonator"
+            }
+          ],
+          "publisher": {
+            "@type": "Person",
+            "name": "Felipe Stanzani",
+            "url": "https://felipestanzani.com"
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://shadcn-tanstack-form.felipestanzani.com/"
+          },
+          "articleSection": [
+            "Features",
+            "Anatomy",
+            "Installation", 
+            "Usage",
+            "Architecture"
+          ],
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "React Forms",
+              "description": "Building forms in React applications"
+            },
+            {
+              "@type": "Thing", 
+              "name": "TypeScript",
+              "description": "Type-safe JavaScript development"
+            },
+            {
+              "@type": "Thing",
+              "name": "Form Validation",
+              "description": "Client-side form validation techniques"
+            },
+            {
+              "@type": "Thing",
+              "name": "UI Components",
+              "description": "Reusable user interface components"
+            }
+          ],
+          "teaches": [
+            "How to integrate shadcn/ui with TanStack Form",
+            "Setting up type-safe form validation with Zod",
+            "Building accessible forms with proper error handling",
+            "Managing form state with TanStack Form",
+            "Creating reusable form components"
+          ]
         },
         {
-          "@type": "Question",
-          "name": "How do I install it?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Install shadcn/ui with 'npx shadcn@latest init', then install TanStack Form with 'npm add @tanstack/react-form', and copy the provided form components to your project."
-          }
+          "@type": "HowTo",
+          "@id": "https://shadcn-tanstack-form.felipestanzani.com/#installation-guide",
+          "name": "How to Install shadcn/ui + TanStack Form",
+          "description": "Step-by-step installation guide for setting up shadcn/ui with TanStack Form",
+          "image": "https://shadcn-tanstack-form.felipestanzani.com/tanstack.png",
+          "totalTime": "PT10M",
+          "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "USD",
+            "value": "0"
+          },
+          "tool": [
+            {
+              "@type": "HowToTool",
+              "name": "npm"
+            },
+            {
+              "@type": "HowToTool", 
+              "name": "pnpm"
+            },
+            {
+              "@type": "HowToTool",
+              "name": "yarn"
+            }
+          ],
+          "supply": [
+            {
+              "@type": "HowToSupply",
+              "name": "Node.js 18+"
+            },
+            {
+              "@type": "HowToSupply",
+              "name": "React project"
+            }
+          ],
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Install shadcn/ui",
+              "text": "Initialize shadcn/ui in your project",
+              "url": "https://shadcn-tanstack-form.felipestanzani.com/#installation",
+              "image": "https://shadcn-tanstack-form.felipestanzani.com/tanstack.png"
+            },
+            {
+              "@type": "HowToStep", 
+              "position": 2,
+              "name": "Install TanStack Form",
+              "text": "Add TanStack Form to your project dependencies",
+              "url": "https://shadcn-tanstack-form.felipestanzani.com/#installation"
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3, 
+              "name": "Copy form.tsx component",
+              "text": "Download and add the form.tsx component to your components/ui folder",
+              "url": "https://github.com/felipestanzani/shadcn-tanstack-form/blob/main/src/components/ui/form.tsx"
+            },
+            {
+              "@type": "HowToStep",
+              "position": 4,
+              "name": "Copy form-hook.tsx",
+              "text": "Download and add the form-hook.tsx to your hooks folder", 
+              "url": "https://github.com/felipestanzani/shadcn-tanstack-form/blob/main/src/hooks/form-hook.tsx"
+            },
+            {
+              "@type": "HowToStep",
+              "position": 5,
+              "name": "Add shadcn/ui components",
+              "text": "Install the shadcn/ui components you need (button, input, label, etc.)",
+              "url": "https://shadcn-tanstack-form.felipestanzani.com/#installation"
+            }
+          ]
+        },
+        {
+          "@type": "CodeRepository",
+          "@id": "https://github.com/felipestanzani/shadcn-tanstack-form#repository", 
+          "name": "shadcn-tanstack-form",
+          "description": "Source code for the shadcn/ui + TanStack Form integration",
+          "url": "https://github.com/felipestanzani/shadcn-tanstack-form",
+          "codeRepository": "https://github.com/felipestanzani/shadcn-tanstack-form",
+          "programmingLanguage": [
+            "TypeScript",
+            "JavaScript", 
+            "React"
+          ],
+          "runtimePlatform": [
+            "Node.js",
+            "Browser"
+          ],
+          "targetProduct": {
+            "@id": "https://shadcn-tanstack-form.felipestanzani.com/#software"
+          },
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Felipe Stanzani",
+              "url": "https://felipestanzani.com"
+            },
+            {
+              "@type": "Person",
+              "name": "Luca LeCarbonator", 
+              "url": "https://github.com/LeCarbonator"
+            }
+          ]
         }
       ]
     }
-    </script>
-  <script type="module" crossorigin src="/assets/index-Bg_Ec2R7.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CB7CaFj-.css">
+  </script>
+  <script type="module" crossorigin src="/assets/index-B-u787IH.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BA5JZkp-.css">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 </head>
 
 <body>
-    <!-- Skip Navigation for Accessibility -->
-    <a href="#main"
-        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-md z-50">
-        Skip to main content
-    </a>
+  <!-- Skip Navigation for Accessibility -->
+  <a href="#main"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-md z-50">
+    Skip to main content
+  </a>
 
-    <div id="root"></div>
+  <div id="root"></div>
 </body>
 
 </html>

@@ -59,11 +59,12 @@ export default function UsageSection() {
       )}
     </form.AppField>
 
-    <form.Subscribe
-     selector={(state) => [state.canSubmit, state.isSubmitting]}
-    > {/* This element allows you to listen to the form state */}
+    {/* This TanStack Form element allows you to listen to the form state */}
+    <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}> 
       {([canSubmit, isSubmitting]) => (
-        {/* Submit button */}
+        <Button type="submit" disabled={!canSubmit}>
+          {isSubmitting ? "Submitting..." : "Submit"}
+        </Button>
       )}
     </form.Subscribe>
   </Form>
@@ -134,9 +135,7 @@ return (
         )}
       </form.AppField>
 
-      <form.Subscribe
-        selector={(state) => [state.canSubmit, state.isSubmitting]}
-      >
+      <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
         {([canSubmit, isSubmitting]) => (
           <Button type="submit" disabled={!canSubmit}>
             {isSubmitting ? "Submitting..." : "Submit"}

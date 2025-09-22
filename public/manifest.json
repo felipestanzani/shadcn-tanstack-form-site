@@ -1,7 +1,7 @@
 {
     "name": "shadcn/ui + TanStack Form",
     "short_name": "shadcn-tanstack-form",
-    "description": "A seamless integration of shadcn/ui Form components with TanStack Form, maintaining TanStack's core principles of developer experience and type safety.",
+    "description": "A component for seamless integration of shadcn/ui components with TanStack Form, maintaining TanStack's core principles of developer experience and type safety.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",

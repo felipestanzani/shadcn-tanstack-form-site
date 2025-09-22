@@ -104,11 +104,18 @@ const form = useAppForm({
       <div className="mx-auto max-w-[800px] px-4">
         <Card>
           <CardHeader>
-            <CardTitle>Define the form properties</CardTitle>
+            <CardTitle>Create the form</CardTitle>
             <CardDescription>
-              You can define the form properties such as default values,
-              validators, and onSubmit handler. For more details, check the
-              TanStack Form documentation.
+              You can create the form using the {' <form.AppForm> '} and the
+              {' <Form> '}
+              wrapper component. For more details, check the{' '}
+              <a
+                href="https://tanstack.com/form/latest/docs/overview"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                TanStack Form documentation.
+              </a>
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -177,7 +184,6 @@ return (
         )}
       </form.AppField>
 
-      {/* We can listen to the form state using the form.Subscribe component */}
       <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
         {([canSubmit, isSubmitting]) => (
           <Button type="submit" disabled={!canSubmit}>
