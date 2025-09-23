@@ -106,8 +106,9 @@ const form = useAppForm({
           <CardHeader>
             <CardTitle>Create the form</CardTitle>
             <CardDescription>
-              You can create the form using the {' <form.AppForm> '} and the
-              {' <Form> '}
+              You can create the form using the{' '}
+              <code>{' <form.AppForm> '}</code> and the
+              <code>{' <Form> '}</code>
               wrapper component. For more details, check the{' '}
               <a
                 href="https://tanstack.com/form/latest/docs/overview"

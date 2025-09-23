@@ -22,42 +22,24 @@ export default function ArchitectureSection() {
             <CardTitle>Form Components</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-sm">
-                <code>Form</code> - Root form component
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-sm">
-                <code>FormField</code> - Field wrapper
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-sm">
-                <code>FormItem</code> - Field container
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-sm">
-                <code>FormLabel</code> - Accessible labels
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-sm">
-                <code>FormControl</code> - Input wrapper
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-sm">
-                <code>FormMessage</code> - Error display
-              </span>
-            </div>
+            <ArchitectureItem>
+              <code>Form</code> - Root form component
+            </ArchitectureItem>
+            <ArchitectureItem>
+              <code>FormField</code> - Field wrapper
+            </ArchitectureItem>
+            <ArchitectureItem>
+              <code>FormItem</code> - Field container
+            </ArchitectureItem>
+            <ArchitectureItem>
+              <code>FormLabel</code> - Accessible labels
+            </ArchitectureItem>
+            <ArchitectureItem>
+              <code>FormControl</code> - Input wrapper
+            </ArchitectureItem>
+            <ArchitectureItem>
+              <code>FormMessage</code> - Error display
+            </ArchitectureItem>
           </CardContent>
         </Card>
         <Card>
@@ -65,35 +47,26 @@ export default function ArchitectureSection() {
             <CardTitle>Key Features</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-sm">Full TypeScript support</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-sm">
-                Standard schema validation (Zod, Valibot, ArkType, etc.)
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-sm">Automatic error handling</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-sm">Reactive state management</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-sm">Built-in accessibility</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-sm">Comprehensive testing</span>
-            </div>
+            <ArchitectureItem>Full TypeScript support</ArchitectureItem>
+            <ArchitectureItem>
+              Standard schema validation (Zod, Valibot, ArkType, etc.)
+            </ArchitectureItem>
+            <ArchitectureItem>Automatic error handling</ArchitectureItem>
+            <ArchitectureItem>Reactive state management</ArchitectureItem>
+            <ArchitectureItem>Built-in accessibility</ArchitectureItem>
+            <ArchitectureItem>Comprehensive testing</ArchitectureItem>
           </CardContent>
         </Card>
       </div>
     </section>
+  )
+}
+
+function ArchitectureItem({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-2">
+      <CheckCircle className="size-4 text-primary" />
+      <span className="text-sm">{children}</span>
+    </div>
   )
 }

@@ -16,7 +16,7 @@ export default function HeroSection() {
           </div>
         </div>
         <Badge variant="outline" className="mb-4">
-          <Zap className="mr-1 h-3 w-3" />
+          <Zap className="mr-1 size-3" />
           TanStack Form Integration
         </Badge>
         <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1] text-balance">
@@ -52,7 +52,7 @@ export default function HeroSection() {
               target="_blank"
               rel="noreferrer"
             >
-              <ExternalLink className="mr-2 h-4 w-4" />
+              <ExternalLink className="mr-2 size-4" />
               TanStack Form
             </a>
           </Button>

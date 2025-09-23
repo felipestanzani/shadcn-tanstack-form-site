@@ -25,7 +25,7 @@ export default function FeaturesSection() {
       <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3 px-4">
         <Card>
           <CardHeader>
-            <CheckCircle className="h-8 w-8 text-primary" />
+            <CheckCircle className="size-8 text-primary" />
             <CardTitle>Type-safe forms</CardTitle>
           </CardHeader>
           <CardContent>
@@ -37,7 +37,7 @@ export default function FeaturesSection() {
         </Card>
         <Card>
           <CardHeader>
-            <Zap className="h-8 w-8 text-primary" />
+            <Zap className="size-8 text-primary" />
             <CardTitle>TanStack Integration</CardTitle>
           </CardHeader>
           <CardContent>
@@ -49,7 +49,7 @@ export default function FeaturesSection() {
         </Card>
         <Card>
           <CardHeader>
-            <Code className="h-8 w-8 text-primary" />
+            <Code className="size-8 text-primary" />
             <CardTitle>shadcn/ui styling</CardTitle>
           </CardHeader>
           <CardContent>

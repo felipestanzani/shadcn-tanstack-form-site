@@ -24,7 +24,7 @@ export default function Header() {
         <div className="mr-4 flex items-center">
           <a className="mr-6 flex items-center space-x-2" href="/">
             <div className="flex items-center justify-center">
-              <TreePalm className="h-6 w-6 text-primary" />
+              <TreePalm className="size-6 text-primary" />
             </div>
             <span className="hidden font-bold sm:inline-block">
               shadcn/ui + TanStack Form
@@ -77,7 +77,7 @@ export default function Header() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Github className="h-4 w-4" />
+                <Github className="size-4" />
                 <span className="sr-only">GitHub</span>
               </a>
             </Button>
