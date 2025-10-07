@@ -10,7 +10,10 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 export default function UsageSection() {
   return (
-    <section id="usage" className="space-y-6 py-8 md:py-12 lg:py-24">
+    <section
+      id="usage"
+      className="space-y-6 py-8 md:py-12 lg:py-24 bg-muted/50"
+    >
       <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center">
         <h2 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl">
           Usage
@@ -137,11 +140,11 @@ const form = useAppForm({
 import { useAppForm } from "@/hooks/form-hook"
 import {
   Form,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormDescription,
-  FormMessage,
+  Field,
+  FieldLabel,
+  FieldControl,
+  FieldDescription,
+  FieldError,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -167,21 +170,21 @@ return (
     <Form className="space-y-4">
         <form.AppField name="email">
         {(field) => (
-          <FormItem>
-            <FormLabel>Email</FormLabel>
-            <FormControl>
+          <Field>
+            <FieldLabel>Email</FieldLabel>
+            <FieldControl>
               <Input
                 type="email"
                 placeholder="Enter your email"
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
               />
-            </FormControl>
-            <FormDescription>
+            </FieldControl>
+            <FieldDescription>
               We'll never share your email with anyone else.
-            </FormDescription>
-            <FormMessage />
-          </FormItem>
+            </FieldDescription>
+            <FieldError />
+          </Field>
         )}
       </form.AppField>
 

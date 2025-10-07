@@ -2,10 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 export default function InstallationSection() {
   return (
-    <section
-      id="installation"
-      className="space-y-6 py-8 md:py-12 lg:py-24 bg-muted/50"
-    >
+    <section id="installation" className="space-y-6 py-8 md:py-12 lg:py-24">
       <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center">
         <h2 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl">
           Installation
