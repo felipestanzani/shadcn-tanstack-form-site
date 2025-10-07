@@ -3,10 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 
 export default function ArchitectureSection() {
   return (
-    <section
-      id="architecture"
-      className="space-y-6 py-8 md:py-12 lg:py-24 bg-muted/50"
-    >
+    <section id="architecture" className="space-y-6 py-8 md:py-12 lg:py-24">
       <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center">
         <h2 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl">
           Architecture
@@ -26,19 +23,19 @@ export default function ArchitectureSection() {
               <code>Form</code> - Root form component
             </ArchitectureItem>
             <ArchitectureItem>
-              <code>FormField</code> - Field wrapper
+              <code>Field</code> - Field container
             </ArchitectureItem>
             <ArchitectureItem>
-              <code>FormItem</code> - Field container
+              <code>FieldLabel</code> - Accessible labels
             </ArchitectureItem>
             <ArchitectureItem>
-              <code>FormLabel</code> - Accessible labels
+              <code>FieldControl</code> - Input wrapper
             </ArchitectureItem>
             <ArchitectureItem>
-              <code>FormControl</code> - Input wrapper
+              <code>FieldDescription</code> - Optional description
             </ArchitectureItem>
             <ArchitectureItem>
-              <code>FormMessage</code> - Error display
+              <code>FieldError</code> - Error display
             </ArchitectureItem>
           </CardContent>
         </Card>

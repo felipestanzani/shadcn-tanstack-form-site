@@ -116,11 +116,11 @@ yarn preview
 ```tsx
 import { useForm } from '@tanstack/react-form'
 import {
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormDescription,
-  FormMessage
+  Field,
+  FieldLabel,
+  FieldControl,
+  FieldDescription,
+  FieldError
 } from '@/components/ui/form'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -158,21 +158,21 @@ export default function SimpleFormExample() {
         }}
       >
         {(field) => (
-          <FormItem>
-            <FormLabel>First Name</FormLabel>
-            <FormControl>
+          <Field>
+            <FieldLabel>First Name</FieldLabel>
+            <FieldControl>
               <Input
                 placeholder="Enter your first name"
                 value={field.state.value}
                 onBlur={field.handleBlur}
                 onChange={(e) => field.handleChange(e.target.value)}
               />
-            </FormControl>
-            <FormDescription>
+            </FieldControl>
+            <FieldDescription>
               This is your public display first name.
-            </FormDescription>
-            <FormMessage />
-          </FormItem>
+            </FieldDescription>
+            <FieldError />
+          </Field>
         )}
       </form.Field>
 

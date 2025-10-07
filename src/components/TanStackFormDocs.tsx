@@ -6,6 +6,7 @@ import FeaturesSection from '@/components/features-section'
 import UsageSection from '@/components/usage-section'
 import ArchitectureSection from '@/components/architecture-section'
 import AnatomySection from './anatomy-section'
+import FieldHierarchySection from './field-hierarchy-section'
 
 export default function TanStackFormDocs() {
   return (
@@ -16,6 +17,7 @@ export default function TanStackFormDocs() {
         <HeroSection />
         <FeaturesSection />
         <AnatomySection />
+        <FieldHierarchySection />
         <InstallationSection />
         <UsageSection />
         <ArchitectureSection />
