@@ -18,6 +18,16 @@ export default function Header() {
       })
     }
   }
+
+  const sections = [
+    { id: 'features', label: 'Features' },
+    { id: 'anatomy', label: 'Anatomy' },
+    { id: 'hierarchy', label: 'Hierarchy' },
+    { id: 'installation', label: 'Installation' },
+    { id: 'usage', label: 'Usage' },
+    { id: 'architecture', label: 'Architecture' }
+  ]
+
   return (
     <header className="flex justify-center sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center px-4">
@@ -30,47 +40,20 @@ export default function Header() {
               shadcn/ui + TanStack Form
             </span>
           </a>
-          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-            <a
-              href="#features"
-              onClick={(e) => handleSmoothScroll(e, 'features')}
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-            >
-              Features
-            </a>
-            <a
-              href="#anatomy"
-              onClick={(e) => handleSmoothScroll(e, 'anatomy')}
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-            >
-              Anatomy
-            </a>
-            <a
-              href="#installation"
-              onClick={(e) => handleSmoothScroll(e, 'installation')}
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-            >
-              Installation
-            </a>
-            <a
-              href="#usage"
-              onClick={(e) => handleSmoothScroll(e, 'usage')}
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-            >
-              Usage
-            </a>
-            <a
-              href="#architecture"
-              onClick={(e) => handleSmoothScroll(e, 'architecture')}
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-            >
-              Architecture
-            </a>
+          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium *:transition-colors *:hover:text-foreground/60">
+            {sections.map((section) => (
+              <a
+                key={section.id}
+                href={`#${section.id}`}
+                onClick={(e) => handleSmoothScroll(e, section.id)}
+              >
+                {section.label}
+              </a>
+            ))}
           </nav>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">
           <div className="flex items-center space-x-2">
-            <ThemeToggle />
             <Button variant="ghost" size="sm" asChild>
               <a
                 href="https://github.com/felipestanzani/shadcn-tanstack-form"
@@ -79,8 +62,13 @@ export default function Header() {
               >
                 <Github className="size-4" />
                 <span className="sr-only">GitHub</span>
+                <img
+                  alt="GitHub Repo stars"
+                  src="https://img.shields.io/github/stars/felipestanzani/shadcn-tanstack-form?style=plastic&labelColor=%23000"
+                />
               </a>
             </Button>
+            <ThemeToggle />
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 export default function FieldHierarchySection() {
   return (
     <section
-      id="anatomy"
+      id="hierarchy"
       className="space-y-6 py-8 md:py-12 lg:py-24 bg-muted/50"
     >
       <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center">
