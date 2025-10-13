@@ -7,7 +7,10 @@
       "name": "shadcn-tanstack-form",
       "type": "registry:block",
       "title": "shadcn-tanstack-form",
-      "description": "A simple shadcn-tanstack-form component.",
+      "description": "Seamless integration of shadcn/ui Form components with TanStack Form, maintaining TanStack's core principles of developer experience and type safety.",
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
       "files": [
         {
           "path": "registry/form.tsx",

@@ -24,10 +24,21 @@ export default function InstallationSection() {
               yarn
             </TabsTrigger>
           </TabsList>
-          <InternalSteps manager="npm" install="npm install" dlx="npx" />
-          <InternalSteps manager="pnpm" install="pnpm add" dlx="pnpm dlx" />
-          <InternalSteps manager="yarn" install="yarn add" dlx="npx" />
+          <InstallationSteps manager="npm" install="npm install" dlx="npx" />
+          <InstallationSteps manager="pnpm" install="pnpm add" dlx="pnpm dlx" />
+          <InstallationSteps manager="yarn" install="yarn add" dlx="npx" />
         </Tabs>
+        <p className="text-sm text-muted-foreground pt-4">
+          You can also download the components from the project{' '}
+          <a
+            href="https://github.com/felipestanzani/shadcn-tanstack-form"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium underline underline-offset-4"
+          >
+            GitHub repository
+          </a>
+        </p>
       </div>
     </section>
   )
@@ -79,7 +90,7 @@ const steps = [
   }
 ] as const
 
-function InternalSteps({
+function InstallationSteps({
   manager,
   install,
   dlx
