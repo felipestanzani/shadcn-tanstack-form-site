@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "shadcn-tanstack-form",
+  "homepage": "https://shadcn-tanstack-form.felipestanzani.com",
+  "items": [
+    {
+      "name": "shadcn-tanstack-form",
+      "type": "registry:block",
+      "title": "shadcn-tanstack-form",
+      "description": "Seamless integration of shadcn/ui Form components with TanStack Form, maintaining TanStack's core principles of developer experience and type safety.",
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
+      "files": [
+        {
+          "path": "registry/form.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/form-hook.tsx",
+          "type": "registry:hook"
+        }
+      ]
+    }
+  ]
+}

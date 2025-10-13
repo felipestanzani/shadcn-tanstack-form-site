@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "shadcn-tanstack-form",
+  "homepage": "https://shadcn-tanstack-form.felipestanzani.com",
+  "items": [
+    {
+      "name": "shadcn-tanstack-form",
+      "type": "registry:block",
+      "title": "shadcn-tanstack-form",
+      "description": "A simple shadcn-tanstack-form component.",
+      "files": [
+        {
+          "path": "registry/form.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/form-hook.tsx",
+          "type": "registry:hook"
+        }
+      ]
+    }
+  ]
+}
