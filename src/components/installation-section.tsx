@@ -79,7 +79,7 @@ const steps = [
   {
     managerType: 'dlx',
     title:
-      '3. Add the shadcn/ui components you want. <code>field</code> is required.',
+      '3. Add the shadcn/ui components you want. Field component is required.',
     command: 'shadcn@latest add field button input label checkbox textarea'
   },
   {
