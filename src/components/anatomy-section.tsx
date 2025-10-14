@@ -77,7 +77,7 @@ export default function AnatomySection() {
   <Form className="...">
 
 
-    {/* You don't have to explicity control onSubmit, but you can. */}
+    {/* You don't have to explicitly control onSubmit, but you can. */}
 
 
     <form.AppField name="..."> {/* You can set field validators here */}
