@@ -47,7 +47,7 @@ export default function AnatomySection() {
           field.state.meta.isTouched && !field.state.meta.isValid
         return (
           <Field data-invalid={isInvalid}>
-            <FieldLabel htmlFor={field.state.name}>...</FieldLabel>
+            <FieldLabel htmlFor={field.name}>...</FieldLabel>
             <FieldControl>
               { /* Your form field */}
             </FieldControl>
@@ -77,13 +77,13 @@ export default function AnatomySection() {
   <Form className="...">
 
 
-  {/* You don't have to explicity control onSubmit, but you can. */}
+    {/* You don't have to explicity control onSubmit, but you can. */}
 
 
     <form.AppField name="..."> {/* You can set field validators here */}
       {(field) => (
 
-      {/* Error handling is done automatically */}
+          {/* Error handling is done automatically */}
       
           <Field>
             <FieldLabel>...</FieldLabel>
