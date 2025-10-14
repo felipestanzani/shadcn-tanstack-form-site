@@ -35,7 +35,7 @@ export default function AnatomySection() {
               <CodeCurtain>
                 <BeforeCode>
                   {`<form.AppForm>
-  <Form className="..."
+  <form className="..."
     onSubmit={(e) => {
       e.preventDefault()
       form.handleSubmit()
@@ -108,7 +108,7 @@ export default function AnatomySection() {
         </Button>
       )}
     </form.Subscribe>
-  </Form>
+  </form>
 </form.AppForm>`}
                 </AfterCode>
               </CodeCurtain>
