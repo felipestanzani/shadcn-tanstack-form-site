@@ -14,7 +14,6 @@ import {
   TooltipContent,
   TooltipTrigger
 } from '@/components/ui/tooltip'
-import { Button } from './ui/button'
 
 export default function CodeCurtain({
   children

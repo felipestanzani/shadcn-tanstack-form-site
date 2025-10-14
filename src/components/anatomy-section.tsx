@@ -35,20 +35,30 @@ export default function AnatomySection() {
               <CodeCurtain>
                 <BeforeCode>
                   {`<form.AppForm>
-  <Form className="...">
+  <Form className="..."
+    onSubmit={(e) => {
+      e.preventDefault()
+      form.handleSubmit()
+    }}
+  >
     <form.AppField name="..."> {/* You can set field validators here */}
-      {(field) => (
-        <Field>
-          <FieldLabel>...</FieldLabel>
-          <FieldControl>
-            { /* Your form field */}
-          </FieldControl>
-          <FieldDescription>
-            Optional description
-          </FieldDescription>
-          <FieldError /> {/* Validation error message */}
-        </Field>
-      )}
+      {(field) => {
+        const isInvalid =
+          field.state.meta.isTouched && !field.state.meta.isValid
+        return (
+          <Field data-invalid={isInvalid}>
+            <FieldLabel htmlFor={field.state.name}>...</FieldLabel>
+            <FieldControl>
+              { /* Your form field */}
+            </FieldControl>
+            <FieldDescription>
+              Optional description
+            </FieldDescription>
+            {isInvalid && <FieldError errors={field.state.meta.errors} />
+            /* Validation error must be controlled manually */}
+          </Field>
+        )
+      }}
     </form.AppField>
 
     {/* This TanStack Form element allows you to listen to the form state */}
@@ -65,18 +75,28 @@ export default function AnatomySection() {
                 <AfterCode>
                   {`<form.AppForm>
   <Form className="...">
+
+
+  {/* You don't have to explicity control onSubmit, but you can. */}
+
+
     <form.AppField name="..."> {/* You can set field validators here */}
       {(field) => (
-        <Field>
-          <FieldLabel>...</FieldLabel>
-          <FieldControl>
-            { /* Your form field */}
-          </FieldControl>
-          <FieldDescription>
-            Optional description
-          </FieldDescription>
-          <FieldError /> {/* Validation error message */}
-        </Field>
+
+      {/* Error handling is done automatically */}
+      
+          <Field>
+            <FieldLabel>...</FieldLabel>
+            <FieldControl>
+              { /* Your form field */}
+            </FieldControl>
+            <FieldDescription>
+              Optional description
+            </FieldDescription>
+            <FieldError /> 
+            {/* Validation error message is controlled automatically */}
+          </Field>
+
       )}
     </form.AppField>
 
