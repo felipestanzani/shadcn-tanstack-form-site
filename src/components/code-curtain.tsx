@@ -12,8 +12,11 @@ import { ChevronsLeftRightIcon } from 'lucide-react'
 import {
   Tooltip,
   TooltipContent,
+  TooltipProvider,
   TooltipTrigger
 } from '@/components/ui/tooltip'
+import { Button } from './ui/button'
+import { cn } from '@/lib/utils'
 
 export default function CodeCurtain({
   children
@@ -33,6 +36,7 @@ export default function CodeCurtain({
   const [dividerPosition, setDividerPosition] = useState(100)
   const [isDragging, setIsDragging] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+  const [clicked, setClicked] = useState(false)
 
   const handleMove = useCallback((clientX: number) => {
     if (!containerRef.current) return
@@ -62,6 +66,7 @@ export default function CodeCurtain({
   )
 
   const startDragging = () => {
+    setClicked(true)
     setIsDragging(true)
   }
   const stopDragging = () => setIsDragging(false)
@@ -83,20 +88,15 @@ export default function CodeCurtain({
     }
   }, [handleMouseMove, handleTouchMove, isDragging])
 
-  useEffect(() => {
-    const timer = setTimeout(() => {}, 5000)
-
-    return () => clearTimeout(timer)
-  }, [])
-
   const handleToggleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation()
+    setClicked(true)
     setDividerPosition((pos) => (pos > 50 ? 0 : 100))
   }
 
   const transitionClass = isDragging
     ? ''
-    : 'transition-all duration-500 ease-in-out'
+    : 'transition-all duration-3000 ease-in-out'
 
   return (
     <div
@@ -122,22 +122,29 @@ export default function CodeCurtain({
         }}
       >
         <div className="absolute top-1/2 -translate-y-1/2 -translate-x-4 size-9 rounded-full bg-blue-500/10 flex items-center justify-center backdrop-blur-sm">
-          <Tooltip>
-            <TooltipTrigger
-              onClick={handleToggleClick}
-              onMouseDown={(e: React.MouseEvent<HTMLButtonElement>) =>
-                e.stopPropagation()
-              }
-              onTouchStart={(e) => e.stopPropagation()}
-              className="size-7 bg-zinc-800 rounded-full border-2 border-blue-500 flex items-center justify-center text-blue-300 hover:bg-zinc-700 transition-colors pointer-events-auto"
-              aria-label="Toggle code view"
-            >
-              <ChevronsLeftRightIcon className="size-4" />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Click or drag me!</p>
-            </TooltipContent>
-          </Tooltip>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  onClick={handleToggleClick}
+                  onMouseDown={(e: React.MouseEvent<HTMLButtonElement>) =>
+                    e.stopPropagation()
+                  }
+                  onTouchStart={(e) => e.stopPropagation()}
+                  className={cn(
+                    'size-7 bg-zinc-800 rounded-full border-2 border-blue-500 flex items-center justify-center text-blue-300 hover:bg-zinc-700 transition-colors pointer-events-auto',
+                    !clicked && 'animate-ping'
+                  )}
+                  aria-label="Toggle code view"
+                >
+                  <ChevronsLeftRightIcon className="size-4" />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Click or drag me!</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
       </div>
     </div>
